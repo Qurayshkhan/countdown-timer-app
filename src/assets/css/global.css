@@ -1,0 +1,23 @@
+:root {
+    --white: '#fcfcfc';
+    --black: '#000';
+}
+
+.bg-white {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
+/* how-many-days page style */
+
+.how-many-days .days-bg {
+    background: #F3F3F3;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
