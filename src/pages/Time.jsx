@@ -1,9 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MasterLayout from "@js/layouts/MasterLayout.jsx";
 import HowManyDaysUntil from "@js/components/RemainingDateAndTime/HowManyDaysUntil";
 import { useState } from "react";
 import HowLongUntil from "@js/components/RemainingDateAndTime/HowLongUntil";
-import dateLinks from "@js/data/daysLinks.json";
 import { Helmet } from "react-helmet";
 import DatesLinks from "../components/Links/DatesLinks";
 const Time = () => {

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import MasterLayout from "@js/layouts/MasterLayout.jsx";
 import HowManyDaysUntil from "../../components/RemainingDateAndTime/HowManyDaysUntil";
 function HowManyDaysUntilTwentyThreeDecember() {

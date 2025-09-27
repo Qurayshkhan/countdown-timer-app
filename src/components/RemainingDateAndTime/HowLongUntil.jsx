@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 import DateTimer from "../Dates/DateTimer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
 import RightSideContent from "../Content/RightSideContent";
+import Heading from "../Heading";
 
 function HowLongUntil({ slug }) {
-  console.log("🚀 ~ HowLongUntil ~ slug:", slug);
   const [remainingHours, setRemainingHours] = useState(0);
   const [remainingMinutes, setRemainingMinutes] = useState(0);
   const [remainingSeconds, setRemainingSeconds] = useState(0);
   const [arrSlice, setArrSlice] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const urlArray = slug?.split("-");
@@ -71,31 +67,10 @@ function HowLongUntil({ slug }) {
 
     return () => clearInterval(interval);
   }, [hours, minutes, meridiem]);
-
+  const heading = slug?.split("-").join(" ").replace(/\//g, "");
   return (
     <>
-      <div className="mb-2">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="card">
-              <div className="card-body">
-                <div className="d-flex align-items-center gap-2">
-                  <a href="javascript:void(0)">
-                    <FontAwesomeIcon
-                      icon={faArrowAltCircleLeft}
-                      className="text-danger"
-                      onClick={() => navigate(-1)}
-                    />
-                  </a>
-                  <p className="card-text text-capitalize">
-                    {slug.split("-").join(" ")}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Heading heading={heading} />
       <div className="row">
         <div className="col-md-8">
           <div className="card">
@@ -108,6 +83,7 @@ function HowLongUntil({ slug }) {
             </div>
           </div>
         </div>
+
         <RightSideContent>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
           assumenda fugit perferendis, dolore saepe culpa perspiciatis
